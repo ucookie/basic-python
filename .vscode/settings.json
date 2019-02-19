@@ -1,7 +1,9 @@
 {
-    "python.pythonPath": "C:\\python3\\python.exe",
+    "python.pythonPath": "/usr/bin/python3",
     "editor.rulers": [
         100
     ],
-    "files.trimTrailingWhitespace": true
+    "files.trimTrailingWhitespace": true,
+    "editor.fontSize": 28,
+    "terminal.integrated.fontSize": 28
 }
