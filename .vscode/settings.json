@@ -1,0 +1,7 @@
+{
+    "python.pythonPath": "C:\\python3\\python.exe",
+    "editor.rulers": [
+        100
+    ],
+    "files.trimTrailingWhitespace": true
+}
