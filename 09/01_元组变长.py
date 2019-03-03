@@ -15,4 +15,4 @@ def calc(*numbers):
     for n in numbers:
         sum=sum+n*n
     return sum
-calc(1,2,3,4)
+print(calc(1,2,3,4))
