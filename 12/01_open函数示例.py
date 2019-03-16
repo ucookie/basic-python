@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+# 简单的读取文件
 fobj = open('file.txt', 'r')
 data = fobj.read()
 print(data)
@@ -10,7 +11,12 @@ data = fobj.readlines()
 print(data)
 fobj.close
 
+# 文件不存在
+fobj = open('no-file.txt', 'r')
+data = fobj.read()
+print(data)
 
+# 写文件
 fobj = open('new.txt', 'w')
 fobj.write('hello python')
 

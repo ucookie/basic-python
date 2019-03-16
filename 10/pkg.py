@@ -3,5 +3,5 @@
 
 name = 'hello world'
 
-def printstr():
-    print('')
+def printstr(own_str):
+    print('打印了字符串：', own_str)

@@ -1,0 +1,2 @@
+hello pythonhello python
+Life is short, i use Python
