@@ -3,7 +3,7 @@
 
 def debug(func):
     def wrapper():
-        print "[DEBUG]: enter {}()".format(func.__name__)
+        print("[DEBUG]: enter {}()".format(func.__name__))
         return func()
     return wrapper
 
@@ -21,10 +21,14 @@ def func4():
 
 def main():
     # 假如此处是在其他模块中调用
-    say_hello = debug(func1)
-    say_hello = debug(func2)
-    say_hello = debug(func3)
-    say_hello = debug(func4)
+    f1 = debug(func1)
+    f1()
+    f2 = debug(func2)
+    f2()
+    f3 = debug(func3)
+    f3()
+    f4 = debug(func4)
+    f4()
 
 if __name__ == '__main__':
     main()

@@ -4,7 +4,7 @@
 def debug():
     import inspect
     caller_name = inspect.stack()[1][3]
-    print "[DEBUG]: enter {}()".format(caller_name)
+    print("[DEBUG]: enter {}()".format(caller_name))
 
 # 每个模块中都包含验证模块, 修改验证功能只在验证模块中修改
 def func1():

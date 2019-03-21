@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-from .model import Model
 
+# '学生信息系统'.center(50, '=')
+from .model import Model
 
 class View(object):
 
@@ -18,7 +19,7 @@ class View(object):
         print('学生信息系统'.center(cls.width, '='))
         print(option_view)
 
-        number = input('请选择(Ctrl + c 退出):')
+        number = input('请选择:')
 
         func_dict = {
             '1': cls.list_student,
@@ -43,10 +44,7 @@ class View(object):
     @classmethod
     def list_student(cls):
         '''列出所有学生'''
-        # (number, name)
-        students_list = Model.get_all_students()
-        for each_one in students_list:
-            print('学号:%s  姓名:%s' % each_one)
+        print('list student')
         raise(KeyboardInterrupt)
 
     @classmethod
@@ -56,7 +54,7 @@ class View(object):
         1. 查询学生信息
         2. 查询成绩
         '''
-        print('查询导航'.center(cls.width + 2, '='))
+        print('学生信息系统'.center(cls.width, '='))
         print(option_view)
 
         number = input('请选择(Ctrl + c 返回上一级):')
@@ -83,47 +81,13 @@ class View(object):
     @classmethod
     def search_student(cls):
         '''查询学生信息'''
-        number = input('输入学号: ')
-        student = Model.search_student_detail(number)
-
-        gender = {'True': '男', 'False': '女'}
-        detail = '''
-        姓名: %s
-        班级: %s
-        年龄: %s
-        性别: %s
-        学号: %s
-        ''' % (
-            student[0], student[1], student[2], gender[student[3]], number
-        )
-        title = '%s同学详细信息' % student[0]
-        print(title.center(cls.width, '='))
-        print(detail)
+        number = input('输入学号')
+        print('查询信息', number)
         raise(KeyboardInterrupt)
 
     @classmethod
     def search_score(cls):
         '''查询成绩'''
-        number = input('输入学号: ')
-        score = Model.search_scores(number)
-
-        sum_score = sum(score)
-        avg_score = float(sum_score) / len(score)
-
-        score_data = '''
-        语文: %d
-        数学: %d
-        英语: %d
-        美术: %d
-        体育: %d
-        总分: %d
-        平均分: %.2f
-        ''' % (
-            score[0], score[1], score[2], score[3], score[4], sum_score, avg_score
-        )
-
-        title = '%s同学成绩' % Model.get_name(number)
-        print(title.center(cls.width, '='))
-        print(score_data)
-
+        number = input('输入学号')
+        print('查询', number)
         raise(KeyboardInterrupt)
