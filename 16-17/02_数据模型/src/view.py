@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-from .model import Model
-
 
 class View(object):
 
@@ -43,10 +41,14 @@ class View(object):
     @classmethod
     def list_student(cls):
         '''列出所有学生'''
+        # 前后换行, 控制格式
+        print('')
         # (number, name)
-        students_list = Model.get_all_students()
-        for each_one in students_list:
+        # 先设计好数据格式
+        for each_one in [('001', '小明'), ('002', '小红')]:
             print('学号:%s  姓名:%s' % each_one)
+
+        print('')
         raise(KeyboardInterrupt)
 
     @classmethod
@@ -84,8 +86,9 @@ class View(object):
     def search_student(cls):
         '''查询学生信息'''
         number = input('输入学号: ')
-        student = Model.search_student_detail(number)
 
+        # 此处待获取信息
+        # (姓名, 班级, 年龄, 性别, 学号)
         gender = {'True': '男', 'False': '女'}
         detail = '''
         姓名: %s
@@ -93,10 +96,10 @@ class View(object):
         年龄: %s
         性别: %s
         学号: %s
-        ''' % (
-            student[0], student[1], student[2], gender[student[3]], number
-        )
-        title = '%s同学详细信息' % student[0]
+        ''' % ('小明', '201901', 20, gender['True'], '001')
+
+        # 标题
+        title = '小明同学详细信息'
         print(title.center(cls.width, '='))
         print(detail)
         raise(KeyboardInterrupt)
@@ -105,8 +108,10 @@ class View(object):
     def search_score(cls):
         '''查询成绩'''
         number = input('输入学号: ')
-        score = Model.search_scores(number)
 
+        # 此处待获取分数
+        # (int, int, ...)
+        score = (100, 100, 100, 100, 100)
         sum_score = sum(score)
         avg_score = float(sum_score) / len(score)
 
@@ -122,7 +127,7 @@ class View(object):
             score[0], score[1], score[2], score[3], score[4], sum_score, avg_score
         )
 
-        title = '%s同学成绩' % Model.get_name(number)
+        title = '小明同学成绩'
         print(title.center(cls.width, '='))
         print(score_data)
 

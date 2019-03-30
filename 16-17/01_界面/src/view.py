@@ -1,9 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-# '学生信息系统'.center(50, '=')
-from .model import Model
-
 class View(object):
 
     width = 40
@@ -19,7 +16,7 @@ class View(object):
         print('学生信息系统'.center(cls.width, '='))
         print(option_view)
 
-        number = input('请选择:')
+        number = input('请选择(Ctrl + c 退出):')
 
         func_dict = {
             '1': cls.list_student,
@@ -44,7 +41,14 @@ class View(object):
     @classmethod
     def list_student(cls):
         '''列出所有学生'''
-        print('list student')
+        # 前后换行, 控制格式
+        print('')
+        # (number, name)
+        # 先设计好数据格式
+        for each_one in [('001', '小明'), ('002', '小红')]:
+            print('学号:%s  姓名:%s' % each_one)
+
+        print('')
         raise(KeyboardInterrupt)
 
     @classmethod
@@ -54,7 +58,7 @@ class View(object):
         1. 查询学生信息
         2. 查询成绩
         '''
-        print('学生信息系统'.center(cls.width, '='))
+        print('查询导航'.center(cls.width + 2, '='))
         print(option_view)
 
         number = input('请选择(Ctrl + c 返回上一级):')
@@ -81,13 +85,50 @@ class View(object):
     @classmethod
     def search_student(cls):
         '''查询学生信息'''
-        number = input('输入学号')
-        print('查询信息', number)
+        number = input('输入学号: ')
+
+        # 此处待获取信息
+        # (姓名, 班级, 年龄, 性别, 学号)
+        gender = {'True': '男', 'False': '女'}
+        detail = '''
+        姓名: %s
+        班级: %s
+        年龄: %s
+        性别: %s
+        学号: %s
+        ''' % ('小明', '201901', 20, gender['True'], '001')
+
+        # 标题
+        title = '小明同学详细信息'
+        print(title.center(cls.width, '='))
+        print(detail)
         raise(KeyboardInterrupt)
 
     @classmethod
     def search_score(cls):
         '''查询成绩'''
-        number = input('输入学号')
-        print('查询', number)
+        number = input('输入学号: ')
+
+        # 此处待获取分数
+        # (int, int, ...)
+        score = (100, 100, 100, 100, 100)
+        sum_score = sum(score)
+        avg_score = float(sum_score) / len(score)
+
+        score_data = '''
+        语文: %d
+        数学: %d
+        英语: %d
+        美术: %d
+        体育: %d
+        总分: %d
+        平均分: %.2f
+        ''' % (
+            score[0], score[1], score[2], score[3], score[4], sum_score, avg_score
+        )
+
+        title = '小明同学成绩'
+        print(title.center(cls.width, '='))
+        print(score_data)
+
         raise(KeyboardInterrupt)
