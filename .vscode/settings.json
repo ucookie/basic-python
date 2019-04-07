@@ -4,6 +4,6 @@
         100
     ],
     "files.trimTrailingWhitespace": true,
-    "editor.fontSize": 14,
-    "terminal.integrated.fontSize": 14
+    "editor.fontSize": 28,
+    "terminal.integrated.fontSize": 28
 }
