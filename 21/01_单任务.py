@@ -3,20 +3,18 @@
 
 import time
 
-
 def note():
-    for i range(3):
+    for i in range(3):
         print('做笔记')
         time.sleep(1)
 
 def listen():
-    for i range(3):
+    for i in range(3):
         print('认真听课')
         time.sleep(1)
 
-def main():
+if __name__ == '__main__':
+    begin_time = time.time()
     note()
     listen()
-
-if __name__ == '__main__':
-    main()
+    print('执行时间:%.4f' % (time.time() - begin_time))

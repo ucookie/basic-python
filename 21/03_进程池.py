@@ -1,29 +1,28 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 
-from multiprocessing import Queue
+import time
+import multiprocessing
 
-q=Queue(3)
-q.put(1)
-q.put(2)
-print(q.full())
-q.put(3)
-print(q.full())
+# 全局队列
+QUEUE = multiprocessing.Manager().Queue()
 
+def listen():
+    global QUEUE
+    for i in range(3):
+        print('认真听课')
+        QUEUE.put('课程内容%d' % i)
+        time.sleep(1)
 
-try:
-    q.put('消息4', True, 2)
-except:
-    print('队列满')
+def note():
+    global QUEUE
+    while True:
+        print('笔记:', QUEUE.get())
+        time.sleep(0.1)
 
-try:
-    q.put_nowait('消息4')
-except:
-    print('队列满')
-
-if not q.full():
-    q.put_nowait('消息4')
-
-if not q.empty():
-    for i in range(q.qsize()):
-        print(q.get_nowait())
-
-q.put(block=False)
+if __name__ == '__main__':
+    pool = multiprocessing.Pool(2)
+    pool.apply_async(listen)
+    pool.apply_async(note)
+    pool.close()
+    pool.join()
