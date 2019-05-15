@@ -9,7 +9,8 @@
 - 15 中等
 - 5 进阶
 
-注：所有题目基于 3.x 版本 Python
+注：1.所有题目基于 3.x 版本 Python
+    2.答案前的 * 号多少, 表示难易程度
 
 python概念
 =======================================================
@@ -118,6 +119,24 @@ e. 'The version is %f' % 3.7
 **答案：b,c,d,e
 
 10.
+已知一段代码：
+t_number = tuple(1, 3, 5)
+l_number = list(1, 2, 3)
+____待填入____
+sum_number = len(t_number) + t_number[0] + l_number[1]
+在下划线处填入哪些语句, 可以让 sum_number 的值等于 7
+
+a. t_number.append(7)
+b. t_number.remove(1)
+c. l_number.append(2)
+d. l_number.remove(2)
+e. t_number[0] = 2
+f. l_number[1] = 3
+
+***答案：d,f
+
+11.
+
 
 15.
 已知存在字典 student = {'number':'001'}, 则下列语句正确的是?
