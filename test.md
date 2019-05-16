@@ -12,7 +12,7 @@
 注：1.所有题目基于 3.x 版本 Python
     2.答案前的 * 号多少, 表示难易程度
 
-python概念
+概念
 =======================================================
 =======================================================
 01.
@@ -39,6 +39,7 @@ f. apt-get install flask==1.0.2
 
 03.
 下列对程序描述不正确的是？
+
 a. 程序是由一系列函数组成的
 b. 程序是由一系列代码组成的
 c. 可以利用函数对程序进行模块化设计
@@ -459,6 +460,40 @@ a. 1
 b. 2
 c. 无输出
 d. 执行出错
+
+4.
+已知有下列代码:
+import copy
+score = [90, 90, 90]
+student = {'name':'小明', 'score': score}
+s1 = copy.copy(student)
+s2 = copy.deepcopy(student)
+s3 = student
+score[0] = 100
+print([x['score'][0] for x in [s1, s2, s3]])
+
+则解释器打印的结果为?
+
+a. [100, 100, 100]
+b. [90, 100, 100]
+c. [100, 90, 100]
+d. [100, 100 90]
+e. [90, 90, 100]
+f. [90, 90, 90]
+
+***答案：c
+
+5.
+下面是定义函数的语句, 正确的是?
+
+a. def func(*args, **kwargs)
+b. def func(name, *args, **kwargs)
+c. def func(*args, name, **kwargs)
+d. def func(*args, **kwargs, name)
+e. def func(name, num='001')
+f. def func(num='001', name)
+
+***答案：a,b,e
 
 文件操作
 =======================================================
