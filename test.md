@@ -25,6 +25,18 @@ e. po
 
 *答案：b
 
+02.
+在 ubuntu 系统中, 现在需要安装 Python 第三方库 Flask。下面哪些命令可以完成这个任务:
+
+a. python3 install flask
+b. python3 install flask==1.0.2
+c. pip3 install flask
+d. pip3 install flask==1.0.2
+e. apt-get install flask
+f. apt-get install flask==1.0.2
+
+*答案: c,d
+
 基本类型
 =======================================================
 =======================================================
@@ -136,7 +148,46 @@ f. l_number[1] = 3
 ***答案：d,f
 
 11.
+下列定义元组的语句正确的是:
 
+a. T = list(3)
+b. T = list(3,)
+c. T = tuple(3)
+d. T = tuple(3,)
+e. T = [3]
+f. T = (3)
+
+*答案: c,d
+
+12.
+使用 dir(A) 查看变量 A 的方法, 其中有一个方法名为 sort(), 则 A 的类型可能是:
+
+a. list
+b. tuple
+c. dict
+d. str
+
+*答案: a
+
+13.
+使用 dir(A) 查看变量 A 的方法, 其中有一个方法名为 split(), 则 A 的类型可能是:
+
+a. list
+b. tuple
+c. dict
+d. str
+
+*答案:e
+
+14.
+使用 dir(A) 查看变量 A 的方法, 其中有一个方法名为 index(), 则 A 的类型可能是:
+
+a. list
+b. tuple
+c. dict
+d. str
+
+**答案: a,b,d
 
 15.
 已知存在字典 student = {'number':'001'}, 则下列语句正确的是?
@@ -146,11 +197,69 @@ c. print(student[number])
 d. print(student['number'])
 e. print(student.get('name', ''))
 
-答案：d,e
+**答案：d,e
+
+16.
+有如下代码:
+D = {'num': 1, 'num': 2}
+print(D)
+则打印出的结果为:
+
+a. {'num': 1, 'num': 2}
+b. {'num': 1}
+c. {'num': 2}
+d. 语法错误, 无法打印
+
+**答案：c
 
 判断, 循环
 =======================================================
 =======================================================
+1.
+有如下代码:
+if x ____ 90:
+    print('优秀')
+elif x ____ 60:
+    print('良好')
+else:
+    print('不及格')
+
+已知输入的 x 为 0 ~ 100 之间的分数, 则在空格处填入符号让结果合理的是:
+
+a. >==
+b. >=
+c. >
+d. <==
+e. <=
+f. <
+
+**答案：b
+
+2.
+下列逻辑计算中, 结果为真的是:
+
+a. not True
+b. not False
+c. True and True
+d. True and False
+e. True or True
+f. True or False
+
+*答案: b,c,e,f
+
+3.
+已知如下代码：
+L1 = [i for i in range(3)]
+L2 = L1[::-1]
+
+则 L2 的值为：
+
+a. [0, 1, 2, 3]
+b. [0, 1, 2]
+c. [3, 2, 1, 0]
+d. [2, 1, 0]
+
+**答案：d
 
 函数, 类
 =======================================================
