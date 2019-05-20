@@ -1,16 +1,6 @@
-1、需要每个讲师出50道选择题
-2、每个选择题要有5到6个选项，而且都是不定项选择题
-3、选择题内容不能是在搜索引擎上搜到的内容，应偏重实战、分析、迁移
-4、错选、漏选、多选都不得分
-5、出题内容的70%应该是讲课中讲过，或者根据讲课的内容可以推导出来的
-
-难度设置
-- 30 基础
-- 15 中等
-- 5 进阶
 
 注：1.所有题目基于 3.x 版本 Python
-    2.答案前的 * 号多少, 表示难易程度
+    2.答案前的 * 号多少, 表示难易程度, 如: **答案: b, 表示中等难度
 
 概念
 =======================================================
@@ -495,17 +485,51 @@ f. def func(num='001', name)
 
 ***答案：a,b,e
 
+6.
+func() 函数使用装饰器打印日志, 请选择合适的装饰器实现, 使其能完成功能
+
+@func_log
+def func(name):
+    print('do something')
+
+a.
+def func_log():
+    def wrapper(*args, **kwargs):
+        print('do log')
+        return func()
+    return wrapper
+
+b.
+def func_log():
+    def wrapper(*args, **kwargs):
+        print('do log')
+        return func()
+    return wrapper
+
+c.
+def func_log(func):
+    def wrapper(*args, **kwargs):
+        print('do log')
+        return func(*args, **kwargs)
+    return wrapper
+
+d.
+def func_log(func):
+    def wrapper(*args, **kwargs):
+        print('do log')
+        return func(*args, **kwargs)
+    return wrapper(*args, **kwargs)
+
+***答案: c
+
 文件操作
 =======================================================
 =======================================================
 1.
 下列语句是某脚本的一部分, 该脚本目录下有 file.txt 文件, 那么下列代码中能够读取到 file.txt 文件中数据的是?
 
-____
-data = fobj.read()
-
 a.
-fobj = open('file.txt', 'a')
+fobj = open('file.txt')
 fobj.read()
 
 b.
@@ -513,9 +537,37 @@ fobj = open('file.txt', 'w')
 fobj.read()
 
 c.
-fobj = open()
+with open('file.txt') as fobj:
+    fobj.read()
 
-多任务
-=======================================================
-=======================================================
+d.
+with open('file.txt', 'w') as fobj:
+    fobj.read()
 
+**答案：b,d
+
+2.
+已知有文本文件内容如下,
+
+小明,"2019,01",18,True,1300000001
+小红,"2019,02",18,False,1300000002
+小蓝,"2019,01",19,True,1300000002
+
+则下列语句中, 能够格式化读取文件的是：
+
+a.
+with open('file', 'r') as fboj:
+    obj = csv.reader(fboj)
+
+b.
+with open('file', 'r') as fboj:
+    obj = json.loads(fboj.read())
+
+c.
+config = configparser.ConfigParser()
+with open('file', 'r') as fboj:
+    config.readfp(fboj)
+
+d.
+tree = ET.ElementTree(file='file')
+root = tree.getroot()
