@@ -1,0 +1,1 @@
+gcc printstr.c -shared -o printstr.so
