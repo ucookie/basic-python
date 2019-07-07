@@ -1,9 +1,6 @@
 {
-    "python.pythonPath": "/usr/bin/python3",
     "editor.rulers": [
         100
     ],
     "files.trimTrailingWhitespace": true,
-    "editor.fontSize": 14,
-    "terminal.integrated.fontSize": 14
 }
